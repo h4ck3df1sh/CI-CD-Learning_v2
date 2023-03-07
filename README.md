@@ -1,13 +1,55 @@
-# Learning CI-CD with sonarcloud and github
+# Vulnerable-Flask-App
 
-This is a downloaded vulnerable python Flask app.
+Erlik 2 - Vulnerable-Flask-App
 
-The main objective of this repo is to only push the code to the main branch once the code passes its SAST.
+Tested - Kali 2022.1
 
-We would have three branches:
+## Description
 
-  - main
-  - security
-  - development
+It is a vulnerable Flask Web App. It is a lab environment created for people who want to improve themselves in the field of web penetration testing.
 
-We will be working in development branch. Then push code to security and run sonarcloud. If it passes all the analysis, a pull request will be generated.
+## Features
+
+It contains the following vulnerabilities.
+
+-HTML Injection
+
+-XSS
+
+-SSTI
+
+-SQL Injection
+
+-Information Disclosure
+
+-Command Injection
+
+-Brute Force
+
+-Deserialization
+
+-Broken Authentication
+
+-DOS
+
+-File Upload
+
+## Installation
+
+git clone https://github.com/anil-yelken/Vulnerable-Flask-App
+
+cd Vulnerable-Flask-App
+
+sudo pip3 install -r requirements.txt
+
+## Usage
+
+python3 vulnerable-flask-app.py
+
+<img src="https://github.com/anil-yelken/Vulnerable-Flask-App/blob/main/vulnerable-flask-app.jpg">
+
+## Contact
+
+https://twitter.com/anilyelken06
+
+https://medium.com/@anilyelken
