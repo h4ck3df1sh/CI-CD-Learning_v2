@@ -1,0 +1,27 @@
+name: Build Python project
+on: push
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    name: Install and build Python
+    steps:
+      - uses: actions/checkout@v2
+      - uses: actions/setup-python@v2
+        with:
+          python-version: '3.x'
+      - run: pip install -r requirements.txt
+      - name: Create SBOM with CycloneDX
+        run: pip install cyclonedx-bom && cyclonedx-py -o ./test.app.bom.xml
+      - name: Upload SBOM artifact
+        uses: actions/upload-artifact@v2
+        with:
+          name: sbom
+          path: './test.app.bom.xml'
+      - name: Download SBOM artifact
+        uses: actions/download-artifact@v2
+        with:
+          name: sbom
+          path: './'
+      - name: Display contents of SBOM artifact
+        run: |
+          cat ./test.app.bom.xml
